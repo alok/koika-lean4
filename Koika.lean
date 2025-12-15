@@ -9,4 +9,8 @@ import Koika.TypeInference
 import Koika.DSL.Syntax
 import Koika.Semantics.Logs
 import Koika.Semantics.Interp
+import Koika.Compile.Lowered
+import Koika.Compile.Circuit
+import Koika.Compile.Lower
+import Koika.Backend.Verilog
 import Koika.Basic

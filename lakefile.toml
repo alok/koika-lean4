@@ -12,6 +12,9 @@ globs = ["Koika", "Koika.DSL", "Koika.Semantics", "Koika.Compile", "Koika.Backen
 [[lean_lib]]
 name = "Test"
 
+[[lean_lib]]
+name = "Examples"
+
 [[lean_exe]]
 name = "koika"
 root = "Main"

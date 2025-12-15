@@ -30,6 +30,12 @@ def lookupMember (k : String) : (sig : List (String × Ty)) → Option (Σ tau, 
         | some ⟨tau', m⟩ => some ⟨tau', .there m⟩
         | none => none
 
+/-- Extract the variable name from a membership witness -/
+def Member.varName {k : String} {tau : Ty} {sig : List (String × Ty)}
+    : Member (k, tau) sig → String
+  | .here => k
+  | .there m => m.varName
+
 /-! ## Typed Context
 
 A context maps variable names to typed values.
