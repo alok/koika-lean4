@@ -185,7 +185,7 @@ abbrev TSig (var_t : Type) := List (var_t × Ty)
 /-- Lowered signature (just sizes) -/
 abbrev LSig := List Nat
 
-def TSig.toLSig (sig : TSig var_t) : LSig :=
+def TSig.toLSig {var_t : Type} (sig : TSig var_t) : LSig :=
   sig.map (fun (_, ty) => ty.size)
 
 /-- Internal function definition -/
@@ -195,7 +195,7 @@ structure InternalFn (var_t fn_name_t action : Type) where
   retType : Ty
   body : action
 
-def InternalFn.mapBody (f : α → β) (fn : InternalFn var_t fn_name_t α) : InternalFn var_t fn_name_t β :=
+def InternalFn.mapBody {var_t fn_name_t α β : Type} (f : α → β) (fn : InternalFn var_t fn_name_t α) : InternalFn var_t fn_name_t β :=
   { fn with body := f fn.body }
 
 /-! ## Type ID for debugging -/

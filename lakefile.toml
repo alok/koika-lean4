@@ -1,13 +1,25 @@
 name = "koika"
 version = "0.1.0"
 defaultTargets = ["koika"]
+[leanOptions]
+pp.unicode.fun = true
+# Keep autoImplicit enabled since code was written with it
+linter.missingDocs = true
+doc.verso = true
 
 # Dependencies - add mathlib later if needed for proofs
 # For now, use Lean's built-in BitVec
 
 [[lean_lib]]
 name = "Koika"
-globs = ["Koika", "Koika.DSL", "Koika.Semantics", "Koika.Compile", "Koika.Backend", "Koika.Proofs"]
+globs = [
+    "Koika",
+    "Koika.DSL",
+    "Koika.Semantics",
+    "Koika.Compile",
+    "Koika.Backend",
+    "Koika.Proofs",
+]
 
 [[lean_lib]]
 name = "Test"
